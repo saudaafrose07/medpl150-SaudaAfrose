@@ -17,7 +17,7 @@
     .container {
       max-width: 850px;
       width: 100%;
-      background: #fffdfa url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      background: rgba(255, 253, 250, 0.85); /* slightly transparent to show flower background */
       padding: 35px 45px;
       border-radius: 20px;
       box-shadow: 6px 6px 20px rgba(0,0,0,0.15);
@@ -62,7 +62,7 @@
       text-align: center;
     }
 
-    /* Bio section */
+    /* Scrollable Bio section */
     .bio-container {
       margin-top: 25px;
       margin-bottom: 40px;
@@ -72,6 +72,20 @@
       box-shadow: 3px 4px 8px rgba(0,0,0,0.1);
       line-height: 1.6;
       font-size: 1em;
+      max-height: 250px;       /* limit height */
+      overflow-y: auto;        /* enable scrolling */
+    }
+
+    .bio-container::-webkit-scrollbar {
+      width: 8px;
+    }
+    .bio-container::-webkit-scrollbar-track {
+      background: #f0eaff;
+      border-radius: 10px;
+    }
+    .bio-container::-webkit-scrollbar-thumb {
+      background-color: #b8d0ff;
+      border-radius: 10px;
     }
 
     /* Homework section */
@@ -155,3 +169,4 @@
   </div>
 </body>
 </html>
+
