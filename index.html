@@ -7,8 +7,6 @@
   <style>
     body {
       background-color: #f7f0ff;
-      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-      background-size: cover;
       font-family: 'Quicksand', sans-serif;
       color: #4a3f6b;
       padding: 30px;
@@ -19,9 +17,7 @@
     .container {
       max-width: 800px;
       width: 100%;
-      background: rgba(255, 253, 250, 0.9);
-      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-      background-blend-mode: overlay;
+      background: #fffdfa url('https://www.transparenttextures.com/patterns/paper-fibers.png');
       padding: 30px 40px;
       border-radius: 20px;
       box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
@@ -99,8 +95,9 @@
     }
 
     /* Slight tilt for collage effect */
-    .homework-list li:nth-child(odd) { transform: rotate(-2deg); }
-    .homework-list li:nth-child(even) { transform: rotate(1deg); }
+    .homework-list li:nth-child(1) { transform: rotate(-2deg); }
+    .homework-list li:nth-child(2) { transform: rotate(1deg); }
+    .homework-list li:nth-child(3) { transform: rotate(-1deg); }
 
     /* Tape behind sticky notes */
     .homework-list li::before {
@@ -150,7 +147,7 @@
 
     .bio {
       position: relative;
-      background-color: rgba(255, 253, 250, 0.9);
+      background-color: #fffdfa;
       padding: 20px;
       border-radius: 15px;
       box-shadow: 2px 3px 6px rgba(0,0,0,0.1);
@@ -204,20 +201,11 @@
   <div class="container">
     <h1>Sauda Afrose</h1>
 
-    <div class="bio-container">
-      <div class="bio-shadow"></div>
-      <div class="bio">
-        <p>
-          As the eldest daughter of an immigrant family and as a Muslim American, I aspire to use media to express the perspectives of minority groups in America. Often times in mainstream media sources, minority groups and women of color aren't accurately depicted. I've noticed this pattern in many media sources which is why I chose to major in Media Studies with a concentration in Journalism at Hunter College. I wanted to combine my love for writing, design and social justice and express that through media which is now the most widely consumed creation in today's polarized world. Due to that interest, I hope to talk about propaganda and media in this class and how different people can perceive one piece of media in different ways. So far my work in media has mostly revolved around graphic design. I have done graphic designing for a publishing company in the past and now I do it for Hunter College's BSA club through Canva. However, I believe I still have a lot to learn about the different features and functions of graphic design which I hope to learn in this class. The only graphic design platform I know how to use is Canva but I hope to expand that knowledge to platforms like Photoshop. When designing, I find myself drawn to vintage aesthetics or aesthetics that reflect my South Asian heritage. I like using softer colors as opposed to brighter ones and I love playing with patterns, fonts and word formats. I like using pictures in my designs and I like making my designs a bit quirky and messy as opposed to brushed up and elegant.
-        </p>
-      </div>
-    </div>
-
     <a href="reflections.html" class="btn-link">Reading Reflections</a>
 
     <h2>Homeworks:</h2>
     <ul class="homework-list">
-      <li>Homework #1 <a href="#">Link</a></li>
+      <li>Homework #1</li>
       <li>Homework #2
         <a href="homework2-image1.html">Image 1</a>
         <a href="homework2-image2.html">Image 2</a>
@@ -228,8 +216,15 @@
       </li>
     </ul>
 
+    <div class="bio-container">
+      <div class="bio-shadow"></div>
+      <p class="bio">
+As the eldest daughter of an immigrant family and as a Muslim American, I aspire to use media to express the perspectives of minority groups in America. Often times in mainstream media sources, minority groups and women of color aren't accurately depicted. I've noticed this pattern in many media sources which is why I chose to major in Media Studies with a concentration in Journalism at Hunter College. I wanted to combine my love for writing, design and social justice and express that through media which is now the most widely consumed creation in today's polarized world. Due to that interest, I hope to talk about propaganda and media in this class and how different people can perceive one piece of media in different ways. So far my work in media has mostly revolved around graphic design. I have done graphic designing for a publishing company in the past and now I do it for Hunter College's BSA club through Canva. However, I believe I still have a lot to learn about the different features and functions of graphic design which I hope to learn in this class. The only graphic design platform I know how to use is Canva but I hope to expand that knowledge to platforms like Photoshop. When designing, I find myself drawn to vintage aesthetics or aesthetics that reflect my South Asian heritage. I like using softer colors as opposed to brighter ones and I love playing with patterns, fonts and word formats. I like using pictures in my designs and I like making my designs a bit quirky and messy as opposed to brushed up and elegant.
+      </p>
+    </div>
   </div>
 
 </body>
 </html>
+
 
