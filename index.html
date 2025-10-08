@@ -3,171 +3,281 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MEDPL 150 Section 1 - Sauda Afrose</title>
+  <title>Sauda's Scrapbook Card</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Courgette&display=swap" rel="stylesheet">
   <style>
-    /* General reset */
-    * {
+    body {
+      background-color: #f2e7ff; /* soft pastel purple background */
+      font-family: 'Quicksand', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      padding: 20px;
+      overflow: hidden;
     }
 
-    body {
-      font-family: 'Quicksand', sans-serif;
-      background: #e0f7f1 url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat; /* subtle paper texture */
-      color: #333;
-      padding: 30px;
+    /* Floating stickers/doodles */
+    .sticker {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      pointer-events: none;
+      animation: float 4s infinite alternate;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg);}
+      100% { transform: translateY(-10px) rotate(10deg);}
+    }
+
+    .card {
+      width: 350px;
+      background: #fff0ff url('https://www.transparenttextures.com/patterns/paper-fibers.png'); /* pastel paper texture */
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Top tabs */
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 15px;
+    }
+
+    .tab {
+      background-color: #c9b3ff; /* pastel purple tab */
+      color: #4a3f6b;
+      padding: 6px 12px;
+      border-radius: 10px 10px 0 0;
+      font-weight: 600;
+      font-size: 0.85em;
+      cursor: pointer;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      background-color: #99d6ff; /* pastel blue active */
+      color: #fff;
+    }
+
+    /* Profile image with tape */
+    .profile-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      border: 3px solid transparent;
+      object-fit: cover;
+      z-index: 2;
       position: relative;
     }
 
-    /* Floating shapes (mint & blue) */
-    .shape {
+    /* Tape pieces */
+    .tape {
       position: absolute;
-      border-radius: 50%;
-      opacity: 0.25;
-      animation: float 6s ease-in-out infinite alternate;
+      width: 40px;
+      height: 12px;
+      background: #fffd7f;
+      top: -5px;
+      left: 10px;
+      transform: rotate(-10deg);
+      border-radius: 2px;
+      z-index: 1;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .tape2 {
+      position: absolute;
+      width: 35px;
+      height: 10px;
+      background: #ff9ce3;
+      top: 90px;
+      right: 10px;
+      transform: rotate(12deg);
+      border-radius: 2px;
+      z-index: 1;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .username {
+      font-family: 'Courgette', cursive;
+      font-size: 1.8em;
+      color: #7d5fff;
+      text-align: center;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 0 #f2e7ff;
+    }
+
+    /* Polaroid shadow behind bio */
+    .bio-container {
+      position: relative;
+      margin-bottom: 15px;
+    }
+
+    .bio-shadow {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.05);
+      border-radius: 12px;
       z-index: 0;
     }
 
-    .shape1 { width: 100px; height: 100px; background: #a8e6cf; top: 50px; left: 20px; animation-duration: 8s;}
-    .shape2 { width: 140px; height: 140px; background: #d0f0fd; top: 250px; left: 75%; animation-duration: 10s;}
-    .shape3 { width: 80px; height: 80px; background: #a8e6cf; top: 500px; left: 25%; animation-duration: 7s;}
-    .shape4 { width: 120px; height: 120px; background: #d0f0fd; top: 750px; left: 65%; animation-duration: 9s;}
-
-    @keyframes float {
-      0% { transform: translateY(0px) translateX(0px);}
-      100% { transform: translateY(-30px) translateX(20px);}
-    }
-
-    /* Scrapbook header */
-    h1 {
-      font-family: 'Courgette', cursive;
-      text-align: center;
-      font-size: 3em;
-      color: #379683; /* mint */
-      margin-bottom: 15px;
-      text-shadow: 2px 2px 0 #d0f0fd; /* subtle paper shadow */
-      z-index: 1;
+    .bio {
       position: relative;
-    }
-
-    h2 {
-      font-family: 'Quicksand', sans-serif;
-      font-size: 1.8em;
-      text-align: left;
-      margin: 30px 0 15px 10%;
-      color: #379683;
-      position: relative;
+      font-size: 0.9em;
+      color: #4a3f6b;
+      line-height: 1.4em;
+      background-color: #ffffffcc;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: justify;
       z-index: 1;
     }
 
-    a {
-      color: #379683;
+    /* Social buttons */
+    .socials {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 10px;
+    }
+
+    .socials a {
+      color: #4a3f6b;
       text-decoration: none;
-      font-weight: 600;
+      font-size: 1.3em;
       transition: 0.3s;
     }
 
-    a:hover {
-      color: #05386b; /* dark blue */
-      text-decoration: underline;
+    .socials a:hover {
+      color: #7d5fff;
     }
 
-    ul {
-      max-width: 700px;
-      margin: 0 auto 30px;
-      padding-left: 40px;
-      list-style-type: square;
-      z-index: 1;
-      position: relative;
-    }
-
-    ul ul {
-      list-style-type: circle;
-      padding-left: 20px;
-    }
-
-    /* Paragraphs in scrapbook “papers” */
-    p {
-      max-width: 750px;
-      margin: 20px auto;
-      font-size: 1.1em;
-      background: #ffffffcc; /* translucent white paper */
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 3px 3px 8px rgba(0,0,0,0.1); /* soft shadow */
-      position: relative;
-      z-index: 1;
-      border: 1px dashed #a8e6cf; /* mint outline */
-    }
-
-    /* Cute button style for links */
+    /* Button-like links */
     .btn-link {
       display: inline-block;
-      margin: 15px 0;
-      padding: 12px 28px;
-      background-color: #a8e6cf; /* mint button */
-      color: #05386b;
-      border-radius: 25px;
+      margin-top: 5px;
+      padding: 6px 15px;
+      background-color: #c9b3ff;
+      color: #4a3f6b;
+      border-radius: 20px;
       font-weight: 600;
       text-decoration: none;
+      text-align: center;
+      font-size: 0.85em;
       transition: 0.3s;
-      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-      position: relative;
-      z-index: 1;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
     }
 
     .btn-link:hover {
-      background-color: #379683;
-      color: #d0f0fd;
-      transform: rotate(-2deg) translateY(-3px);
+      background-color: #99d6ff;
+      color: white;
+      transform: translateY(-2px);
     }
 
-    /* Polaroid effect for nested lists */
-    ul ul li {
-      background-color: #d0f0fdcc; /* soft blue paper */
-      margin: 8px 0;
-      padding: 5px 10px;
-      border-radius: 10px;
-      display: inline-block;
+    /* Side vertical buttons */
+    .side-buttons {
+      position: absolute;
+      right: -65px;
+      top: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
+    .side-buttons a {
+      background-color: #c9b3ff;
+      color: #4a3f6b;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.85em;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transition: 0.3s;
+      box-shadow: 1px 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .side-buttons a:hover {
+      background-color: #99d6ff;
+      color: white;
+    }
+
+    /* Floating doodle stickers */
+    .sticker1 { top: 20px; left: -10px; }
+    .sticker2 { bottom: 30px; right: -15px; }
+    .sticker3 { top: 50%; left: -20px; }
   </style>
 </head>
 <body>
 
-  <!-- Floating shapes -->
-  <div class="shape shape1"></div>
-  <div class="shape shape2"></div>
-  <div class="shape shape3"></div>
-  <div class="shape shape4"></div>
+  <!-- Floating stickers -->
+  <img src="https://i.pinimg.com/564x/2f/8e/9f/2f8e9f7f6b0f91a3e14e5c56b0e3e1b1.png" class="sticker sticker1">
+  <img src="https://i.pinimg.com/564x/70/9d/28/709d28b5a1c6f49c947baf5035e7f6ff.png" class="sticker sticker2">
+  <img src="https://i.pinimg.com/564x/3e/77/92/3e779278f09c512e3c1c6f9b0c2e9e23.png" class="sticker sticker3">
 
-  <h1>Sauda Afrose</h1>
+  <div class="card">
+    <!-- Top tabs -->
+    <div class="tabs">
+      <div class="tab active">Home</div>
+      <div class="tab">References</div>
+      <div class="tab">Gallery</div>
+      <div class="tab">OCs</div>
+    </div>
 
-  <a href="reflections.html" class="btn-link">Reading Reflections</a>
+    <!-- Profile image with tape -->
+    <div class="profile-container">
+      <img src="https://i.pinimg.com/236x/6e/d8/e2/6ed8e217bcc3b77f6b3f4a77c135dbbc.jpg" alt="Profile" class="profile-img">
+      <div class="tape"></div>
+      <div class="tape2"></div>
+    </div>
 
-  <h2>Homeworks:</h2>
-  <ul>
-    <li>Homework #1</li>
-    <li>Homework #2
-      <ul>
-        <li><a href="homework2-image1.html">Homework 2 Image 1</a></li>
-        <li><a href="homework2-image2.html">Homework 2 Image 2</a></li>
-      </ul>
-    </li>
-    <li>Homework #3
-      <ul>
-        <li><a href="homework3-part1.html">Homework 3 Part 1</a></li>
-        <li><a href="homework3part2.html">Homework 3 Part 2</a></li>
-      </ul>
-    </li>
-  </ul>
+    <!-- Username -->
+    <div class="username">Sauda Afrose</div>
 
-  <p>
-    As the eldest daughter of an immigrant family and as a Muslim American, I aspire to use media to express the perspectives of minority groups in America. Often times in mainstream media sources, minority groups and women of color aren't accurately depicted. I've noticed this pattern in many media sources which is why I chose to major in Media Studies with a concentration in Journalism at Hunter College. I wanted to combine my love for writing, design and social justice and express that through media which is now the most widely consumed creation in today's polarized world. Due to that interest, I hope to talk about propaganda and media in this class and how different people can perceive one piece of media in different ways. So far my work in media has mostly revolved around graphic design. I have done graphic designing for a publishing company in the past and now I do it for Hunter College's BSA club through Canva. However, I believe I still have a lot to learn about the different features and functions of graphic design which I hope to learn in this class. The only graphic design platform I know how to use is Canva but I hope to expand that knowledge to platforms like Photoshop. When designing, I find myself drawn to vintage aesthetics or aesthetics that reflect my South Asian heritage. I like using softer colors as opposed to brighter ones and I love playing with patterns, fonts and word formats. I like using pictures in my designs and I like making my designs a bit quirky and messy as opposed to brushed up and elegant.
-  </p>
+    <!-- Bio with polaroid shadow -->
+    <div class="bio-container">
+      <div class="bio-shadow"></div>
+      <div class="bio">
+        Hi! I’m a Media Studies student passionate about graphic design, storytelling, and capturing cultural aesthetics. I love pastel tones, scrapbook vibes, and creating cute layouts.
+      </div>
+    </div>
+
+    <!-- Social links -->
+    <div class="socials">
+      <a href="#">🐦</a>
+      <a href="#">📸</a>
+      <a href="#">🎵</a>
+    </div>
+
+    <!-- Button link example -->
+    <a href="reflections.html" class="btn-link">Reading Reflections</a>
+
+    <!-- Side vertical buttons -->
+    <div class="side-buttons">
+      <a href="#">Credits</a>
+      <a href="#">Support</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
 
 </body>
+</html>
+
 </html>
 
