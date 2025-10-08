@@ -1,29 +1,155 @@
-<!doctype html>
-<html>
-  <head>
-    <title>MEDPL 150 Section 1 - Sauda Afrose</title>
-  </head>
-  <body>
-     <h1 style="color:red; align:center;">Sauda Afrose</h1>
-<br><br>
-   <h1></h1><a href="reflections.html">Reading Reflections</a><h1>
-    
-<h2>Homeworks:</h2>
-<ul>
-<li>Homework #1</li>
-<li>Homework #2</li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEDPL 150 Section 1 - Sauda Afrose</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fff9e6; /* pastel yellow */
+      color: #333;
+      padding: 20px;
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Floating shapes */
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: float 6s ease-in-out infinite alternate;
+    }
+
+    .shape1 { width: 80px; height: 80px; background: #b19cd9; top: 50px; left: 30px; animation-duration: 7s;}
+    .shape2 { width: 120px; height: 120px; background: #fbe58f; top: 300px; left: 80%; animation-duration: 9s;}
+    .shape3 { width: 60px; height: 60px; background: #b19cd9; top: 500px; left: 20%; animation-duration: 8s;}
+    .shape4 { width: 100px; height: 100px; background: #fbe58f; top: 700px; left: 70%; animation-duration: 10s;}
+
+    @keyframes float {
+      0% { transform: translateY(0px) translateX(0px);}
+      100% { transform: translateY(-30px) translateX(20px);}
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #b19cd9; /* pastel purple */
+      z-index: 1;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    a {
+      color: #b19cd9;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #9a7fc0;
+      text-decoration: underline;
+    }
+
+    ul {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      padding-left: 20px;
+      list-style-type: square;
+      position: relative;
+      z-index: 1;
+    }
+
+    ul ul {
+      list-style-type: circle;
+      padding-left: 20px;
+    }
+
+    p {
+      max-width: 800px;
+      margin: 20px auto;
+      font-size: 1.1em;
+      background-color: #f9f1ff; /* pastel purple background for paragraph */
+      padding: 20px;
+      border-radius: 15px;
+      z-index: 1;
+      position: relative;
+    }
+
+    /* Cute button style for links */
+    .btn-link {
+      display: inline-block;
+      margin: 10px 0;
+      padding: 10px 25px;
+      background-color: #fbe58f; /* pastel yellow */
+      color: #b19cd9;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-link:hover {
+      background-color: #f9e65f;
+      color: #7a5aa3;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Floating shapes -->
+  <div class="shape shape1"></div>
+  <div class="shape shape2"></div>
+  <div class="shape shape3"></div>
+  <div class="shape shape4"></div>
+
+  <h1>Sauda Afrose</h1>
+
+  <a href="reflections.html" class="btn-link">Reading Reflections</a>
+
+  <h2>Homeworks:</h2>
   <ul>
-   <li><a href="homework2-image1.html">Homework 2 Image 1</a></li>
-   <li><a href="homework2-image2.html">Homework 2 Image 2</a></li>
+    <li>Homework #1</li>
+    <li>Homework #2
+      <ul>
+        <li><a href="homework2-image1.html">Homework 2 Image 1</a></li>
+        <li><a href="homework2-image2.html">Homework 2 Image 2</a></li>
+      </ul>
+    </li>
+    <li>Homework #3
+      <ul>
+        <li><a href="homework3-part1.html">Homework 3 Part 1</a></li>
+        <li><a href="homework3part2.html">Homework 3 Part 2</a></li>
+      </ul>
+    </li>
   </ul>
-<li>
-  Homework #3
-  <ul>
-    <li><a href="homework3-part1.html">Homework 3 Part 1</a></li>
-    <li><a href="homework3part2.html">Homework 3 Part 2</a></li>
-  </ul>
-</li>
-<br>
-<p>As the eldest daughter of an immigrant family and as a Muslim American, I aspire to use media to express the perspectives of minority groups in America. Often times in mainstream media sources, minority groups and women of color aren't accurately depicted. I've noticed this pattern in many media sources which is why I chose to major in Media Studies with a concentration in Journalism at Hunter College. I wanted to combine my love for writing, design and social justice and express that through media which is now the most widely consumed creation in today's polarized world. Due to that interest, I hope to talk about propaganda and media in this class and how different people can perceive one piece of media in different ways. So far my work in media has mostly revolved around graphic design. I have done graphic designing for a publishing company in the past and now I do it for Hunter College's BSA club through Canva. However, I believe I still have a lot to learn about the different features and functions of graphic design which I hope to learn in this class. The only graphic design platform I know how to use is Canva but I hope to expand that knowledge to platforms like Photoshop. When designing, I find myself drawn to vintage aeshetics or aesthetics that reflect my South Asian heritage. I like using softer colors as opposed to brighter ones and I love playing with patterns, fonts and word formats. I like using pictures in my designs and I like making my designs a bit quirky and messy as opposed to brushed up and elegant.</p>
- </body>
+
+  <p>
+    As the eldest daughter of an immigrant family and as a Muslim American, I aspire to use media to express the perspectives of minority groups in America. Often times in mainstream media sources, minority groups and women of color aren't accurately depicted. I've noticed this pattern in many media sources which is why I chose to major in Media Studies with a concentration in Journalism at Hunter College. I wanted to combine my love for writing, design and social justice and express that through media which is now the most widely consumed creation in today's polarized world. Due to that interest, I hope to talk about propaganda and media in this class and how different people can perceive one piece of media in different ways. So far my work in media has mostly revolved around graphic design. I have done graphic designing for a publishing company in the past and now I do it for Hunter College's BSA club through Canva. However, I believe I still have a lot to learn about the different features and functions of graphic design which I hope to learn in this class. The only graphic design platform I know how to use is Canva but I hope to expand that knowledge to platforms like Photoshop. When designing, I find myself drawn to vintage aesthetics or aesthetics that reflect my South Asian heritage. I like using softer colors as opposed to brighter ones and I love playing with patterns, fonts and word formats. I like using pictures in my designs and I like making my designs a bit quirky and messy as opposed to brushed up and elegant.
+  </p>
+
+</body>
 </html>
