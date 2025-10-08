@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MEDPL 150 Section 1 - Sauda Afrose</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Courgette&display=swap" rel="stylesheet">
   <style>
+    /* General reset */
     * {
       margin: 0;
       padding: 0;
@@ -14,68 +15,72 @@
 
     body {
       font-family: 'Quicksand', sans-serif;
-      background-color: #fff9e6; /* pastel yellow */
+      background: #e0f7f1 url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat; /* subtle paper texture */
       color: #333;
-      padding: 20px;
-      line-height: 1.6;
+      padding: 30px;
       position: relative;
-      overflow-x: hidden;
     }
 
-    /* Floating shapes */
+    /* Floating shapes (mint & blue) */
     .shape {
       position: absolute;
       border-radius: 50%;
-      opacity: 0.3;
+      opacity: 0.25;
       animation: float 6s ease-in-out infinite alternate;
+      z-index: 0;
     }
 
-    .shape1 { width: 80px; height: 80px; background: #b19cd9; top: 50px; left: 30px; animation-duration: 7s;}
-    .shape2 { width: 120px; height: 120px; background: #fbe58f; top: 300px; left: 80%; animation-duration: 9s;}
-    .shape3 { width: 60px; height: 60px; background: #b19cd9; top: 500px; left: 20%; animation-duration: 8s;}
-    .shape4 { width: 100px; height: 100px; background: #fbe58f; top: 700px; left: 70%; animation-duration: 10s;}
+    .shape1 { width: 100px; height: 100px; background: #a8e6cf; top: 50px; left: 20px; animation-duration: 8s;}
+    .shape2 { width: 140px; height: 140px; background: #d0f0fd; top: 250px; left: 75%; animation-duration: 10s;}
+    .shape3 { width: 80px; height: 80px; background: #a8e6cf; top: 500px; left: 25%; animation-duration: 7s;}
+    .shape4 { width: 120px; height: 120px; background: #d0f0fd; top: 750px; left: 65%; animation-duration: 9s;}
 
     @keyframes float {
       0% { transform: translateY(0px) translateX(0px);}
       100% { transform: translateY(-30px) translateX(20px);}
     }
 
-    h1, h2 {
+    /* Scrapbook header */
+    h1 {
+      font-family: 'Courgette', cursive;
       text-align: center;
-      color: #b19cd9; /* pastel purple */
+      font-size: 3em;
+      color: #379683; /* mint */
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 0 #d0f0fd; /* subtle paper shadow */
       z-index: 1;
       position: relative;
     }
 
-    h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-
     h2 {
-      margin-top: 40px;
-      margin-bottom: 15px;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1.8em;
+      text-align: left;
+      margin: 30px 0 15px 10%;
+      color: #379683;
+      position: relative;
+      z-index: 1;
     }
 
     a {
-      color: #b19cd9;
+      color: #379683;
       text-decoration: none;
       font-weight: 600;
       transition: 0.3s;
     }
 
     a:hover {
-      color: #9a7fc0;
+      color: #05386b; /* dark blue */
       text-decoration: underline;
     }
 
     ul {
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto 30px;
-      padding-left: 20px;
+      padding-left: 40px;
       list-style-type: square;
-      position: relative;
       z-index: 1;
+      position: relative;
     }
 
     ul ul {
@@ -83,37 +88,49 @@
       padding-left: 20px;
     }
 
+    /* Paragraphs in scrapbook “papers” */
     p {
-      max-width: 800px;
+      max-width: 750px;
       margin: 20px auto;
       font-size: 1.1em;
-      background-color: #f9f1ff; /* pastel purple background for paragraph */
-      padding: 20px;
+      background: #ffffffcc; /* translucent white paper */
+      padding: 25px;
       border-radius: 15px;
-      z-index: 1;
+      box-shadow: 3px 3px 8px rgba(0,0,0,0.1); /* soft shadow */
       position: relative;
+      z-index: 1;
+      border: 1px dashed #a8e6cf; /* mint outline */
     }
 
     /* Cute button style for links */
     .btn-link {
       display: inline-block;
-      margin: 10px 0;
-      padding: 10px 25px;
-      background-color: #fbe58f; /* pastel yellow */
-      color: #b19cd9;
+      margin: 15px 0;
+      padding: 12px 28px;
+      background-color: #a8e6cf; /* mint button */
+      color: #05386b;
       border-radius: 25px;
       font-weight: 600;
       text-decoration: none;
       transition: 0.3s;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
       position: relative;
       z-index: 1;
     }
 
     .btn-link:hover {
-      background-color: #f9e65f;
-      color: #7a5aa3;
-      transform: translateY(-3px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background-color: #379683;
+      color: #d0f0fd;
+      transform: rotate(-2deg) translateY(-3px);
+    }
+
+    /* Polaroid effect for nested lists */
+    ul ul li {
+      background-color: #d0f0fdcc; /* soft blue paper */
+      margin: 8px 0;
+      padding: 5px 10px;
+      border-radius: 10px;
+      display: inline-block;
     }
 
   </style>
@@ -153,3 +170,4 @@
 
 </body>
 </html>
+
