@@ -1,239 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>MEDPL 150 Section 1 - Sauda Afrose</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Courgette&display=swap" rel="stylesheet">
-  <style>
-    /* Full-page flower background */
-    body {
-      background: url('https://i.pinimg.com/736x/15/1b/b9/151bb9903a9b21e542a52ee2f355b458.jpg') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Quicksand', sans-serif;
-      color: #4a3f6b;
-      padding: 30px;
-      display: flex;
-      justify-content: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sauda Afrose Portfolio</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Georgia", serif;
+    background-image: url('https://i.pinimg.com/736x/15/1b/b9/151bb9903a9b21e542a52ee2f355b458.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #333;
+  }
 
-    /* Container card */
-    .container {
-      max-width: 800px;
-      width: 100%;
-      background: rgba(255, 253, 250, 0.9); /* translucent to show background */
-      padding: 30px 40px;
-      border-radius: 20px;
-      box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
-      position: relative;
-    }
+  .container {
+    max-width: 900px;
+    width: 100%;
+    background: rgba(255, 253, 250, 0.9);
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    margin: 50px auto;
+  }
 
-    h1 {
-      color: #a99fe8;
-      text-align: center;
-      font-family: 'Courgette', cursive;
-      font-size: 2.4em;
-      margin-bottom: 15px;
-    }
+  h1 {
+    text-align: center;
+    font-size: 2.8em;
+    color: #2b7a78; /* mint blue-green color for your name */
+    margin-bottom: 15px;
+  }
 
-    h2.homeworks-title {
-      text-align: center;
-      color: #a99fe8; /* matches name color */
-      font-size: 1.7em;
-      margin-top: 30px;
-      margin-bottom: 15px;
-    }
+  .section {
+    margin-bottom: 40px;
+    text-align: center;
+  }
 
-    a {
-      color: #4a3f6b;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+  .bio {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #444;
+    text-align: justify;
+  }
 
-    a:hover {
-      color: #8c9ce8;
-    }
+  .section-title {
+    text-align: center;
+    font-size: 1.8em;
+    color: #2b7a78;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
 
-    .btn-link {
-      display: block;
-      margin: 0 auto 25px auto;
-      padding: 10px 20px;
-      background-color: #d6c8ff;
-      color: #4a3f6b;
-      border-radius: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      text-align: center;
-      font-size: 1.05em;
-      box-shadow: 2px 3px 6px rgba(0,0,0,0.1);
-      transition: background-color 0.3s, color 0.3s;
-    }
+  .reflections, .homework {
+    background: rgba(240, 255, 250, 0.9); /* same as HW background */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.08);
+    margin: 0 auto;
+    max-width: 750px;
+  }
 
-    .btn-link:hover {
-      background-color: #b8d0ff;
-      color: white;
-    }
+  .reflections a, .homework a {
+    color: #2b7a78;
+    text-decoration: none;
+    font-weight: 600;
+  }
 
-    /* Bio container with polaroid shadow and scroll */
-    .bio-container {
-      position: relative;
-      margin-bottom: 25px;
-      max-height: 250px;
-      overflow-y: auto;
-    }
+  .homework-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
 
-    .bio-shadow {
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.05);
-      border-radius: 15px;
-      z-index: 0;
-    }
+  .hw-item {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
 
-    .bio {
-      position: relative;
-      background-color: rgba(255, 253, 250, 0.9);
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 2px 3px 6px rgba(0,0,0,0.1);
-      z-index: 1;
-      font-size: 1em;
-      line-height: 1.5;
-    }
+  .hw-item h3 {
+    margin-bottom: 10px;
+    color: #2b7a78;
+    font-weight: 700; /* thicker font */
+  }
 
-    /* Scrollbar styling for bio */
-    .bio-container::-webkit-scrollbar {
-      width: 8px;
-    }
+  .hw-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
 
-    .bio-container::-webkit-scrollbar-track {
-      background: #f0eaff;
-      border-radius: 10px;
-    }
+  .hw-links a {
+    color: #3aafa9;
+    text-decoration: none;
+    font-weight: 600;
+  }
 
-    .bio-container::-webkit-scrollbar-thumb {
-      background-color: #b8d0ff;
-      border-radius: 10px;
-    }
-
-    /* Clean, centered 2-column homework list */
-    .homework-list-clean {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      justify-items: center;
-      gap: 15px 25px;
-      list-style: none;
-      padding: 0;
-      margin: 0 auto 25px auto;
-      text-align: center;
-    }
-
-    .homework-list-clean li {
-      background-color: rgba(214, 200, 255, 0.6); /* soft pastel */
-      border-radius: 12px;
-      padding: 12px 15px;
-      font-size: 1em;
-      box-shadow: 2px 3px 6px rgba(0,0,0,0.15);
-      color: #a99fe8; /* matches your name */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      position: relative;
-    }
-
-    /* Optional scrapbook icon/bullet */
-    .homework-list-clean li::before {
-      content: "📝";
-      font-size: 1em;
-    }
-
-    .homework-list-clean li a {
-      display: block;
-      margin-top: 5px;
-      font-size: 0.95em;
-      color: #a99fe8;
-      font-weight: normal;
-    }
-
-    .homework-list-clean li a:hover {
-      color: #8c9ce8;
-    }
-
-    /* Stickers */
-    .sticker {
-      position: absolute;
-      width: 35px;
-      height: 35px;
-      pointer-events: none;
-      animation: float 5s infinite alternate;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0) rotate(0deg);}
-      100% { transform: translateY(-5px) rotate(5deg);}
-    }
-
-    .sticker1 { top: -10px; left: -10px; }
-    .sticker2 { top: 50px; right: -10px; }
-    .sticker3 { bottom: -10px; left: 30%; }
-
-  </style>
+  .hw-links a:hover {
+    text-decoration: underline;
+  }
+</style>
 </head>
 <body>
 
-  <!-- Stickers -->
-  <img src="https://i.pinimg.com/564x/2f/8e/9f/2f8e9f7f6b0f91a3e14e5c56b0e3e1b1.png" class="sticker sticker1">
-  <img src="https://i.pinimg.com/564x/70/9d/28/709d28b5a1c6f49c947baf5035e7f6ff.png" class="sticker sticker2">
-  <img src="https://i.pinimg.com/564x/3e/77/92/3e779278f09c512e3c1c6f9b0c2e9e23.png" class="sticker sticker3">
+<div class="container">
+  <h1>Sauda Afrose</h1>
 
-  <div class="container">
-    <h1>Sauda Afrose</h1>
-
-    <!-- Reading Reflections directly after name -->
-    <a href="reflections.html" class="btn-link">Reading Reflections</a>
-
-    <!-- Bio -->
-    <div class="bio-container">
-      <div class="bio-shadow"></div>
-      <div class="bio">
-        <p>
-          As the eldest daughter of an immigrant family and as a Muslim American, I aspire to use media to express the perspectives of minority groups in America. Often times in mainstream media sources, minority groups and women of color aren't accurately depicted. I've noticed this pattern in many media sources which is why I chose to major in Media Studies with a concentration in Journalism at Hunter College. I wanted to combine my love for writing, design and social justice and express that through media which is now the most widely consumed creation in today's polarized world. Due to that interest, I hope to talk about propaganda and media in this class and how different people can perceive one piece of media in different ways. So far my work in media has mostly revolved around graphic design. I have done graphic designing for a publishing company in the past and now I do it for Hunter College's BSA club through Canva. However, I believe I still have a lot to learn about the different features and functions of graphic design which I hope to learn in this class. The only graphic design platform I know how to use is Canva but I hope to expand that knowledge to platforms like Photoshop. When designing, I find myself drawn to vintage aesthetics or aesthetics that reflect my South Asian heritage. I like using softer colors as opposed to brighter ones and I love playing with patterns, fonts and word formats. I like using pictures in my designs and I like making my designs a bit quirky and messy as opposed to brushed up and elegant.
-        </p>
-      </div>
-    </div>
-
-    <!-- Homeworks -->
-    <h2 class="homeworks-title">Homeworks:</h2>
-    <ul class="homework-list-clean">
-      <li>Homework #1
-        <a href="homework1.html">Link</a>
-      </li>
-      <li>Homework #2
-        <a href="homework2-image1.html">Image 1</a>
-        <a href="homework2-image2.html">Image 2</a>
-      </li>
-      <li>Homework #3
-        <a href="homework3-part1.html">Part 1</a>
-        <a href="homework3-part2.html">Part 2</a>
-      </li>
-      <li>Homework #4</li>
-      <li>Homework #5</li>
-      <li>Homework #6</li>
-      <li>Homework #7</li>
-      <li>Homework #8</li>
-      <li>Homework #9</li>
-      <li>Homework #10</li>
-    </ul>
+  <div class="section reflections">
+    <div class="section-title">Reading Reflections</div>
+    <p><a href="https://example.com/reading-reflection">Click here to view my Reading Reflection</a></p>
   </div>
+
+  <div class="section bio">
+    <div class="section-title">Bio</div>
+    <p>
+      My name is Sauda Afrose, and I’m currently pursuing a degree in education with a focus on inclusion and equity. I’ve always been interested in understanding how culture shapes learning experiences, especially for immigrant and multilingual students.
+    </p>
+    <p>
+      Due to that interest, I’ve been exploring ways educators can build more culturally responsive classrooms. I also enjoy combining creativity and advocacy—through projects, art, and writing—to highlight voices that often go unheard.
+    </p>
+  </div>
+
+  <div class="section homework">
+    <div class="section-title">Homework</div>
+    <div class="homework-list">
+
+      <div class="hw-item">
+        <h3>Homework #1</h3>
+        <div class="hw-links">
+          <a href="#">Link coming soon</a>
+        </div>
+      </div>
+
+      <div class="hw-item">
+        <h3>Homework #2</h3>
+        <div class="hw-links">
+          <a href="https://example.com/hw2-image1">Image 1</a>
+          <a href="https://example.com/hw2-image2">Image 2</a>
+        </div>
+      </div>
+
+      <div class="hw-item">
+        <h3>Homework #3</h3>
+        <div class="hw-links">
+          <a href="https://example.com/hw3-part1">Part 1</a>
+          <a href="https://example.com/hw3-part2">Part 2</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
-
-
-
-
-
