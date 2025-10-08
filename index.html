@@ -6,11 +6,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Courgette&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #f2e7ff; /* soft pastel purple */
+      background-color: #f7f0ff; /* soft pastel purple */
       font-family: 'Quicksand', sans-serif;
       color: #4a3f6b;
       padding: 30px;
-      line-height: 1.7;
       display: flex;
       justify-content: center;
     }
@@ -18,7 +17,7 @@
     .container {
       max-width: 800px;
       width: 100%;
-      background: #ffffffcc url('https://www.transparenttextures.com/patterns/paper-fibers.png'); /* subtle paper texture */
+      background: #fffdfa url('https://www.transparenttextures.com/patterns/paper-fibers.png'); /* soft paper texture */
       padding: 30px 40px;
       border-radius: 20px;
       box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
@@ -26,26 +25,18 @@
     }
 
     h1 {
-      color: #7d5fff;
+      color: #a99fe8; /* muted pastel purple */
       text-align: center;
       font-family: 'Courgette', cursive;
-      font-size: 2.5em;
-      margin-bottom: 15px;
-      position: relative;
+      font-size: 2.4em;
+      margin-bottom: 25px;
     }
 
-    /* Tape behind heading */
-    h1::before {
-      content: "";
-      position: absolute;
-      top: 12px;
-      left: 50%;
-      transform: translateX(-50%) rotate(-2deg);
-      width: 120%;
-      height: 18px;
-      background: #c9b3ff;
-      border-radius: 5px;
-      z-index: -1;
+    h2 {
+      color: #a3c5ff; /* soft pastel blue */
+      font-size: 1.7em;
+      margin-top: 30px;
+      margin-bottom: 15px;
     }
 
     a {
@@ -56,63 +47,70 @@
     }
 
     a:hover {
-      color: #7d5fff;
+      color: #8c9ce8; /* soft purple hover */
     }
 
+    /* Reading Reflections button centered */
     .btn-link {
-      display: inline-block;
-      padding: 10px 18px;
-      background-color: #c9b3ff;
+      display: block;
+      margin: 0 auto 25px auto;
+      padding: 10px 20px;
+      background-color: #d6c8ff; /* soft pastel purple */
       color: #4a3f6b;
-      border-radius: 15px;
+      border-radius: 12px;
       font-weight: 600;
-      margin-bottom: 20px;
       text-decoration: none;
-      transition: background-color 0.3s, color 0.3s;
-      box-shadow: 2px 3px 6px rgba(0,0,0,0.1);
+      text-align: center;
       font-size: 1.05em;
+      box-shadow: 2px 3px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .btn-link:hover {
-      background-color: #99d6ff;
+      background-color: #b8d0ff; /* soft pastel blue */
       color: white;
     }
 
-    h2 {
-      color: #99d6ff;
-      font-size: 1.8em;
-      margin-top: 30px;
-      margin-bottom: 15px;
-    }
-
     ul {
-      list-style-type: square;
-      padding-left: 45px;
-      font-size: 1.1em;
-    }
-
-    ul ul {
-      list-style-type: circle;
-      padding-left: 25px;
-      margin-top: 5px;
-      font-size: 1em;
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     li {
-      margin-bottom: 8px;
+      background-color: #d6c8ff; /* sticky note color */
+      padding: 8px 12px;
+      border-radius: 8px;
+      box-shadow: 1px 2px 4px rgba(0,0,0,0.1);
+      font-size: 1em;
+      min-width: 120px;
+      text-align: center;
     }
 
-    /* Bio container with polaroid shadow */
+    li a {
+      color: #4a3f6b;
+      font-weight: normal;
+    }
+
+    li a:hover {
+      color: #8c9ce8;
+    }
+
+    /* Bio container with polaroid shadow and scroll */
     .bio-container {
       position: relative;
       margin-top: 25px;
       margin-bottom: 25px;
+      max-height: 250px;
+      overflow-y: auto;
     }
 
     .bio-shadow {
       position: absolute;
-      top: 12px;
-      left: 12px;
+      top: 8px;
+      left: 8px;
       width: 100%;
       height: 100%;
       background: rgba(0,0,0,0.05);
@@ -122,16 +120,31 @@
 
     .bio {
       position: relative;
-      background-color: #ffffffcc;
-      padding: 25px;
+      background-color: #fffdfa;
+      padding: 20px;
       border-radius: 15px;
       box-shadow: 2px 3px 6px rgba(0,0,0,0.1);
       z-index: 1;
-      font-size: 1.15em;
-      line-height: 1.8;
+      font-size: 1em;
+      line-height: 1.5;
     }
 
-    /* Stickers - subtle, not distracting */
+    /* Scrollbar styling for bio */
+    .bio-container::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .bio-container::-webkit-scrollbar-track {
+      background: #f0eaff;
+      border-radius: 10px;
+    }
+
+    .bio-container::-webkit-scrollbar-thumb {
+      background-color: #b8d0ff;
+      border-radius: 10px;
+    }
+
+    /* Stickers */
     .sticker {
       position: absolute;
       width: 35px;
@@ -142,7 +155,7 @@
 
     @keyframes float {
       0% { transform: translateY(0) rotate(0deg);}
-      100% { transform: translateY(-6px) rotate(5deg);}
+      100% { transform: translateY(-5px) rotate(5deg);}
     }
 
     .sticker1 { top: -10px; left: -10px; }
@@ -168,14 +181,14 @@
       <li>Homework #1</li>
       <li>Homework #2
         <ul>
-          <li><a href="homework2-image1.html">Homework 2 Image 1</a></li>
-          <li><a href="homework2-image2.html">Homework 2 Image 2</a></li>
+          <li><a href="homework2-image1.html">Image 1</a></li>
+          <li><a href="homework2-image2.html">Image 2</a></li>
         </ul>
       </li>
       <li>Homework #3
         <ul>
-          <li><a href="homework3-part1.html">Homework 3 Part 1</a></li>
-          <li><a href="homework3part2.html">Homework 3 Part 2</a></li>
+          <li><a href="homework3-part1.html">Part 1</a></li>
+          <li><a href="homework3part2.html">Part 2</a></li>
         </ul>
       </li>
     </ul>
