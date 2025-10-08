@@ -7,8 +7,6 @@
   <style>
     body {
       background-color: #f7f0ff;
-      background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-      background-size: cover;
       font-family: 'Quicksand', sans-serif;
       color: #4a3f6b;
       padding: 30px;
@@ -19,8 +17,9 @@
     .container {
       max-width: 800px;
       width: 100%;
-      background: rgba(255, 253, 250, 0.9);
-      background-blend-mode: overlay;
+      background: #fffdfa url('https://i.pinimg.com/736x/15/1b/b9/151bb9903a9b21e542a52ee2f355b458.jpg');
+      background-size: cover;
+      background-position: center;
       padding: 30px 40px;
       border-radius: 20px;
       box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
@@ -77,54 +76,9 @@
       color: white;
     }
 
-    /* Clean, centered 2-column homework list */
-    .homework-list-clean {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      justify-items: center; /* centers each homework block */
-      gap: 15px 25px;
-      list-style: none;
-      padding: 0;
-      margin: 0 auto 25px auto;
-      text-align: center;
-    }
-
-    .homework-list-clean li {
-      background-color: rgba(214, 200, 255, 0.6); /* soft lavender */
-      border-radius: 12px;
-      padding: 12px 15px;
-      font-size: 1em;
-      box-shadow: 2px 3px 6px rgba(0,0,0,0.15);
-      color: #a99fe8; /* matches your name */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      position: relative;
-    }
-
-    /* Optional scrapbook icon/bullet */
-    .homework-list-clean li::before {
-      content: "📝"; /* small icon for scrapbook vibe */
-      font-size: 1em;
-    }
-
-    .homework-list-clean li a {
-      display: block;
-      margin-top: 5px;
-      font-size: 0.95em;
-      color: #a99fe8;
-      font-weight: normal;
-    }
-
-    .homework-list-clean li a:hover {
-      color: #8c9ce8;
-    }
-
     /* Bio container with polaroid shadow and scroll */
     .bio-container {
       position: relative;
-      margin-top: 25px;
       margin-bottom: 25px;
       max-height: 250px;
       overflow-y: auto;
@@ -167,6 +121,50 @@
       border-radius: 10px;
     }
 
+    /* Clean, centered 2-column homework list */
+    .homework-list-clean {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+      gap: 15px 25px;
+      list-style: none;
+      padding: 0;
+      margin: 0 auto 25px auto;
+      text-align: center;
+    }
+
+    .homework-list-clean li {
+      background-color: rgba(214, 200, 255, 0.6); /* soft pastel */
+      border-radius: 12px;
+      padding: 12px 15px;
+      font-size: 1em;
+      box-shadow: 2px 3px 6px rgba(0,0,0,0.15);
+      color: #a99fe8; /* matches your name */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      position: relative;
+    }
+
+    /* Optional scrapbook icon/bullet */
+    .homework-list-clean li::before {
+      content: "📝";
+      font-size: 1em;
+    }
+
+    .homework-list-clean li a {
+      display: block;
+      margin-top: 5px;
+      font-size: 0.95em;
+      color: #a99fe8;
+      font-weight: normal;
+    }
+
+    .homework-list-clean li a:hover {
+      color: #8c9ce8;
+    }
+
     /* Stickers */
     .sticker {
       position: absolute;
@@ -197,23 +195,7 @@
   <div class="container">
     <h1>Sauda Afrose</h1>
 
-    <!-- Homeworks on top -->
-    <h2 class="homeworks-title">Homeworks:</h2>
-    <ul class="homework-list-clean">
-      <li>Homework #1 <a href="#">Link</a></li>
-      <li>Homework #2 <a href="#">Link</a></li>
-      <li>Homework #3 <a href="#">Link</a></li>
-      <li>Homework #4 <a href="#">Link</a></li>
-      <li>Homework #5 <a href="#">Link</a></li>
-      <li>Homework #6 <a href="#">Link</a></li>
-      <li>Homework #7 <a href="#">Link</a></li>
-      <li>Homework #8 <a href="#">Link</a></li>
-      <li>Homework #9 <a href="#">Link</a></li>
-      <li>Homework #10 <a href="#">Link</a></li>
-    </ul>
-
-    <a href="reflections.html" class="btn-link">Reading Reflections</a>
-
+    <!-- Bio on top -->
     <div class="bio-container">
       <div class="bio-shadow"></div>
       <div class="bio">
@@ -223,10 +205,35 @@
       </div>
     </div>
 
+    <!-- Homeworks below bio -->
+    <h2 class="homeworks-title">Homeworks:</h2>
+    <ul class="homework-list-clean">
+      <li>Homework #1
+        <a href="homework1.html">Link</a>
+      </li>
+      <li>Homework #2
+        <a href="homework2-image1.html">Image 1</a>
+        <a href="homework2-image2.html">Image 2</a>
+      </li>
+      <li>Homework #3
+        <a href="homework3-part1.html">Part 1</a>
+        <a href="homework3-part2.html">Part 2</a>
+      </li>
+      <li>Homework #4</li>
+      <li>Homework #5</li>
+      <li>Homework #6</li>
+      <li>Homework #7</li>
+      <li>Homework #8</li>
+      <li>Homework #9</li>
+      <li>Homework #10</li>
+    </ul>
+
+    <a href="reflections.html" class="btn-link">Reading Reflections</a>
   </div>
 
 </body>
 </html>
+
 
 
 
