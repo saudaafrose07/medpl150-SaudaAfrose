@@ -2,282 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sauda's Scrapbook Card</title>
+  <title>MEDPL 150 Section 1 - Sauda Afrose</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Courgette&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #f2e7ff; /* soft pastel purple background */
+      background-color: #f2e7ff; /* soft pastel purple */
       font-family: 'Quicksand', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      padding: 20px;
-      overflow: hidden;
-    }
-
-    /* Floating stickers/doodles */
-    .sticker {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      pointer-events: none;
-      animation: float 4s infinite alternate;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0) rotate(0deg);}
-      100% { transform: translateY(-10px) rotate(10deg);}
-    }
-
-    .card {
-      width: 350px;
-      background: #fff0ff url('https://www.transparenttextures.com/patterns/paper-fibers.png'); /* pastel paper texture */
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-      padding: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Top tabs */
-    .tabs {
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 15px;
-    }
-
-    .tab {
-      background-color: #c9b3ff; /* pastel purple tab */
       color: #4a3f6b;
-      padding: 6px 12px;
-      border-radius: 10px 10px 0 0;
-      font-weight: 600;
-      font-size: 0.85em;
-      cursor: pointer;
-      text-align: center;
-      transition: 0.3s;
-    }
-
-    .tab.active {
-      background-color: #99d6ff; /* pastel blue active */
-      color: #fff;
-    }
-
-    /* Profile image with tape */
-    .profile-container {
-      position: relative;
+      padding: 30px;
+      line-height: 1.7;
       display: flex;
       justify-content: center;
-      margin-bottom: 15px;
     }
 
-    .profile-img {
-      width: 100px;
-      height: 100px;
-      border-radius: 10px;
-      border: 3px solid transparent;
-      object-fit: cover;
-      z-index: 2;
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background: #ffffffcc url('https://www.transparenttextures.com/patterns/paper-fibers.png'); /* subtle paper texture */
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
       position: relative;
     }
 
-    /* Tape pieces */
-    .tape {
-      position: absolute;
-      width: 40px;
-      height: 12px;
-      background: #fffd7f;
-      top: -5px;
-      left: 10px;
-      transform: rotate(-10deg);
-      border-radius: 2px;
-      z-index: 1;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-
-    .tape2 {
-      position: absolute;
-      width: 35px;
-      height: 10px;
-      background: #ff9ce3;
-      top: 90px;
-      right: 10px;
-      transform: rotate(12deg);
-      border-radius: 2px;
-      z-index: 1;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-
-    .username {
-      font-family: 'Courgette', cursive;
-      font-size: 1.8em;
+    h1 {
       color: #7d5fff;
       text-align: center;
-      margin-bottom: 10px;
-      text-shadow: 1px 1px 0 #f2e7ff;
-    }
-
-    /* Polaroid shadow behind bio */
-    .bio-container {
-      position: relative;
+      font-family: 'Courgette', cursive;
+      font-size: 2.5em;
       margin-bottom: 15px;
-    }
-
-    .bio-shadow {
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.05);
-      border-radius: 12px;
-      z-index: 0;
-    }
-
-    .bio {
       position: relative;
-      font-size: 0.9em;
-      color: #4a3f6b;
-      line-height: 1.4em;
-      background-color: #ffffffcc;
-      padding: 15px;
-      border-radius: 12px;
-      text-align: justify;
-      z-index: 1;
     }
 
-    /* Social buttons */
-    .socials {
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 10px;
+    /* Tape behind heading */
+    h1::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-2deg);
+      width: 120%;
+      height: 18px;
+      background: #c9b3ff;
+      border-radius: 5px;
+      z-index: -1;
     }
 
-    .socials a {
+    a {
       color: #4a3f6b;
       text-decoration: none;
-      font-size: 1.3em;
-      transition: 0.3s;
+      font-weight: bold;
+      transition: color 0.3s;
     }
 
-    .socials a:hover {
+    a:hover {
       color: #7d5fff;
     }
 
-    /* Button-like links */
     .btn-link {
       display: inline-block;
-      margin-top: 5px;
-      padding: 6px 15px;
+      padding: 10px 18px;
       background-color: #c9b3ff;
       color: #4a3f6b;
-      border-radius: 20px;
+      border-radius: 15px;
       font-weight: 600;
+      margin-bottom: 20px;
       text-decoration: none;
-      text-align: center;
-      font-size: 0.85em;
-      transition: 0.3s;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.3s, color 0.3s;
+      box-shadow: 2px 3px 6px rgba(0,0,0,0.1);
+      font-size: 1.05em;
     }
 
     .btn-link:hover {
       background-color: #99d6ff;
       color: white;
-      transform: translateY(-2px);
     }
 
-    /* Side vertical buttons */
-    .side-buttons {
-      position: absolute;
-      right: -65px;
-      top: 50px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    h2 {
+      color: #99d6ff;
+      font-size: 1.8em;
+      margin-top: 30px;
+      margin-bottom: 15px;
     }
 
-    .side-buttons a {
-      background-color: #c9b3ff;
-      color: #4a3f6b;
-      text-decoration: none;
-      padding: 6px 12px;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 0.85em;
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      transition: 0.3s;
-      box-shadow: 1px 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .side-buttons a:hover {
-      background-color: #99d6ff;
-      color: white;
-    }
-
-    /* Floating doodle stickers */
-    .sticker1 { top: 20px; left: -10px; }
-    .sticker2 { bottom: 30px; right: -15px; }
-    .sticker3 { top: 50%; left: -20px; }
-  </style>
-</head>
-<body>
-
-  <!-- Floating stickers -->
-  <img src="https://i.pinimg.com/564x/2f/8e/9f/2f8e9f7f6b0f91a3e14e5c56b0e3e1b1.png" class="sticker sticker1">
-  <img src="https://i.pinimg.com/564x/70/9d/28/709d28b5a1c6f49c947baf5035e7f6ff.png" class="sticker sticker2">
-  <img src="https://i.pinimg.com/564x/3e/77/92/3e779278f09c512e3c1c6f9b0c2e9e23.png" class="sticker sticker3">
-
-  <div class="card">
-    <!-- Top tabs -->
-    <div class="tabs">
-      <div class="tab active">Home</div>
-      <div class="tab">References</div>
-      <div class="tab">Gallery</div>
-      <div class="tab">OCs</div>
-    </div>
-
-    <!-- Profile image with tape -->
-    <div class="profile-container">
-      <img src="https://i.pinimg.com/236x/6e/d8/e2/6ed8e217bcc3b77f6b3f4a77c135dbbc.jpg" alt="Profile" class="profile-img">
-      <div class="tape"></div>
-      <div class="tape2"></div>
-    </div>
-
-    <!-- Username -->
-    <div class="username">Sauda Afrose</div>
-
-    <!-- Bio with polaroid shadow -->
-    <div class="bio-container">
-      <div class="bio-shadow"></div>
-      <div class="bio">
-        Hi! I’m a Media Studies student passionate about graphic design, storytelling, and capturing cultural aesthetics. I love pastel tones, scrapbook vibes, and creating cute layouts.
-      </div>
-    </div>
-
-    <!-- Social links -->
-    <div class="socials">
-      <a href="#">🐦</a>
-      <a href="#">📸</a>
-      <a href="#">🎵</a>
-    </div>
-
-    <!-- Button link example -->
-    <a href="reflections.html" class="btn-link">Reading Reflections</a>
-
-    <!-- Side vertical buttons -->
-    <div class="side-buttons">
-      <a href="#">Credits</a>
-      <a href="#">Support</a>
-      <a href="#">Contact</a>
-    </div>
-  </div>
-
-</body>
-</html>
-
-</html>
+    ul {
+      list-
 
