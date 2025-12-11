@@ -1,0 +1,24 @@
+<!doctype html>
+
+<html>
+
+  <head>
+
+    <title>Homework 5 GIF 1</title>
+
+  </head>
+
+  <body>
+
+    <h1>Homework 5 Blinking Eye GIF</h1>
+
+    <p>The GIF you see here is my blinking eye GIF:</p>
+
+    <img src="Homework8-Eye.gif" alt="Homework 8 Eye Gif" width="600">
+
+    <br><br>
+
+    <a href="index.html">Back to Home</a>
+
+
+  </body>
