@@ -17,7 +17,7 @@
     .container {
       max-width: 850px;
       width: 100%;
-      background: rgba(255, 253, 250, 0.85); /* slightly transparent to show flower background */
+      background: rgba(255, 253, 250, 0.85); 
       padding: 35px 45px;
       border-radius: 20px;
       box-shadow: 6px 6px 20px rgba(0,0,0,0.15);
@@ -32,10 +32,9 @@
       margin-bottom: 10px;
     }
 
-    /* Reading Reflections link */
     .btn-link {
-      display: block;
-      margin: 0 auto 30px auto;
+      display: inline-block;
+      margin: 0 10px;
       padding: 12px 22px;
       background-color: #d6c8ff;
       color: #a99fe8;
@@ -46,7 +45,6 @@
       font-size: 1.1em;
       box-shadow: 3px 4px 8px rgba(0,0,0,0.1);
       transition: background-color 0.3s, color 0.3s;
-      width: fit-content;
     }
 
     .btn-link:hover {
@@ -62,7 +60,6 @@
       text-align: center;
     }
 
-    /* Scrollable Bio section */
     .bio-container {
       margin-top: 25px;
       margin-bottom: 40px;
@@ -72,8 +69,8 @@
       box-shadow: 3px 4px 8px rgba(0,0,0,0.1);
       line-height: 1.6;
       font-size: 1em;
-      max-height: 250px;       /* limit height */
-      overflow-y: auto;        /* enable scrolling */
+      max-height: 250px; 
+      overflow-y: auto; 
     }
 
     .bio-container::-webkit-scrollbar {
@@ -88,7 +85,6 @@
       border-radius: 10px;
     }
 
-    /* Homework section */
     .homework-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -131,7 +127,12 @@
 <body>
   <div class="container">
     <h1>Sauda Afrose</h1>
-    <a href="reflections.html" class="btn-link">Reading Reflections</a>
+    
+    <!-- Buttons side by side -->
+    <div style="text-align: center; margin-bottom: 30px;">
+      <a href="reflections.html" class="btn-link">Reading Reflections</a>
+      <a href="https://github.com/yourusername/your-repo" class="btn-link" target="_blank">Interactive Story</a>
+    </div>
 
     <div class="bio-container">
       <p>
@@ -191,8 +192,10 @@
         <a href="homework9.html">Image 1</a>
        </div>
     
-    
-      <div class="homework-item">Homework #10</div>
+      <div class="homework-item">
+        Homework #10
+        <a href="https://github.com/yourusername/your-repo" target="_blank">GitHub Repo</a>
+      </div>
     </div>
   </div>
 </body>
